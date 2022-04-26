@@ -1,7 +1,8 @@
-package ru.artem;
+package ru.artem.perfsystem.resource.page;
 
 import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
+import ru.artem.perfsystem.entity.dto.Report;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -11,19 +12,18 @@ import javax.ws.rs.core.MediaType;
 
 import static java.util.Objects.requireNonNull;
 
-@Path("/some-page")
-public class SomePage {
-
+@Path("/")
+public class MainPage {
     private final Template page;
 
-    public SomePage(Template page) {
+    public MainPage(Template page) {
         this.page = requireNonNull(page, "page is required");
     }
 
     @GET
     @Produces(MediaType.TEXT_HTML)
     public TemplateInstance get(@QueryParam("name") String name) {
-        return page.data("name", name);
+        return page.data("items", Report.listAll());
     }
 
 }
