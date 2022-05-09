@@ -10,6 +10,8 @@ public class Report extends PanacheEntityBase {
 
     @Id
     @Column(name = "report_id", nullable = false)
+    @SequenceGenerator(name = "reportIdSequence", sequenceName = "report_id_sequence", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(generator = "reportIdSequence")
     private Integer id;
 
     @ManyToOne

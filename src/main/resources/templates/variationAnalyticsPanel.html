@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variation Analytics</title>
+</head>
+<body>
+<h3>Payload variation</h3>
+
+<table>
+    <tr>
+        <th style="padding: 4px; border: 1px solid black">Benchmark</th>
+        <th style="padding: 4px; border: 1px solid black">Host</th>
+        <th style="padding: 4px; border: 1px solid black">Payload</th>
+        <th style="padding: 4px; border: 1px solid black">Jdk Name</th>
+        <th style="padding: 4px; border: 1px solid black">Jdk Version</th>
+        <th style="padding: 4px; border: 1px solid black">Mean</th>
+        <th style="padding: 4px; border: 1px solid black">Geomean</th>
+        <th style="padding: 4px; border: 1px solid black">Variation</th>
+        <th style="padding: 4px; border: 1px solid black">Stddev</th>
+        <th style="padding: 4px; border: 1px solid black">Min</th>
+        <th style="padding: 4px; border: 1px solid black">p25</th>
+        <th style="padding: 4px; border: 1px solid black">p50</th>
+        <th style="padding: 4px; border: 1px solid black">p75</th>
+        <th style="padding: 4px; border: 1px solid black">p90</th>
+        <th style="padding: 4px; border: 1px solid black">p99</th>
+        <th style="padding: 4px; border: 1px solid black">Max</th>
+    </tr>
+    {#for wrapper in wrapperList}
+        <tr>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.benchmark.name}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.host.name}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.payload.name}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.jdk.name}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.jdk.version}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.mean}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.geomean}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.variation}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.stddev}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.min}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.p25}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.p50}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.p75}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.p90}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.p99}</td>
+        <td style="padding: 4px; border: 1px solid black">{wrapper.max}</td>
+        </tr>
+    {/for}
+</table>
+
+</body>
+</html>

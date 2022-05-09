@@ -2,9 +2,7 @@ package ru.artem.perfsystem.entity.dto;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Optional;
 
 
@@ -13,6 +11,8 @@ public class Benchmark extends PanacheEntityBase {
 
     @Id
     @Column(name = "benchmark_id", nullable = false)
+    @SequenceGenerator(name = "benchmarkIdSequence", sequenceName = "benchmark_id_sequence", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(generator = "benchmarkIdSequence")
     private Integer id;
 
     @Column(name = "benchmark_name", nullable = false)

@@ -7,8 +7,34 @@
 <body>
 <form action="/log/upload" method="post" enctype="multipart/form-data">
     <p>Upload new log:</p>
-    <p><input type="file" name="logFile"></p>
-    <p><button type="submit">Submit new log</button></p>
+    <p>
+        <label>
+            Benchmark
+            <input type="text" name="benchmark" required>
+        </label>
+    </p>
+    <p>
+        <label>
+            Hostname
+            <input type="text" name="host" required>
+        </label>
+    </p>
+    <p>
+        <label>
+            Jdk Type
+            <input type="text" name="jdkName" required>
+        </label>
+        <label>
+            Jdk Version
+            <input type="number" name="jdkVersion" required>
+        </label>
+    </p>
+    <p>
+        <input type="file" name="logFile" required>
+    </p>
+    <p>
+        <button type="submit">Submit new log</button>
+    </p>
 </form>
 </body>
 </html>

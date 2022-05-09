@@ -10,6 +10,8 @@ public class Payload extends PanacheEntityBase {
 
     @Id
     @Column(name = "payload_id", nullable = false)
+    @SequenceGenerator(name = "payloadIdSequence", sequenceName = "payload_id_sequence", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(generator = "payloadIdSequence")
     private Integer id;
 
     @Column(name = "payload_name", nullable = false)
@@ -19,8 +21,8 @@ public class Payload extends PanacheEntityBase {
     @JoinColumn(name = "payload_parent_id")
     private Benchmark benchmark;
 
-    public static Optional<Payload> findByName(String name) {
-        return find("name", name).firstResultOptional();
+    public static Optional<Payload> findByBenchmarkAndName(Benchmark benchmark, String name) {
+        return find("benchmark = ?1 and name = ?2", benchmark, name).firstResultOptional();
     }
 
     public Integer getId() {

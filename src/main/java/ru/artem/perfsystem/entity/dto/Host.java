@@ -2,9 +2,7 @@ package ru.artem.perfsystem.entity.dto;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Optional;
 
 @Entity(name = "host")
@@ -12,6 +10,8 @@ public class Host extends PanacheEntityBase {
 
     @Id
     @Column(name = "host_id", nullable = false)
+    @SequenceGenerator(name = "hostIdSequence", sequenceName = "host_id_sequence", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(generator = "hostIdSequence")
     private Integer id;
 
     @Column(name = "host_name", nullable = false)

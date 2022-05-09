@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>overview panel</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Benchmarks total</td>
+        <td>{wrapper.benchmarkList.size()}</td>
+    </tr>
+    <tr>
+        <td>Hosts total</td>
+        <td>{wrapper.hostList.size()}</td>
+    </tr>
+    <tr>
+        <td>Jdks total</td>
+        <td>{wrapper.jdkList.size()}</td>
+    </tr>
+    <tr>
+        <td>Metric Types total</td>
+        <td>{wrapper.metricTypeList.size()}</td>
+    </tr>
+    <tr>
+        <td>Payload total</td>
+        <td>{wrapper.payloadList.size()}</td>
+    </tr>
+    <tr>
+        <td>Reports total</td>
+        <td>{wrapper.reportCount}</td>
+    </tr>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+<details>
+    <summary>Benchmark List</summary>
+    <ul>
+        {#for element in wrapper.benchmarkList}
+            <li>{element.getName()}</li>
+        {/for}
+    </ul>
+</details>
+
+<details>
+    <summary>Host List</summary>
+    <ul>
+        {#for element in wrapper.hostList}
+            <li>{element.getName()}</li>
+        {/for}
+    </ul>
+</details>
+
+<details>
+    <summary>Jdk List</summary>
+    <ul>
+        {#for element in wrapper.jdkList}
+            <li>{element.getName()} {element.getVersion()}</li>
+        {/for}
+    </ul>
+</details>
+
+<details>
+    <summary>Payload List</summary>
+    <table>
+        <tr>
+            <th style="padding: 4px; border: 1px solid black">Benchmark</th>
+            <th style="padding: 4px; border: 1px solid black">Payload</th>
+        </tr>
+        {#for element in wrapper.payloadList}
+            <tr>
+                <td style="padding: 4px; border: 1px solid black">{element.getBenchmark().getName()}</td>
+                <td style="padding: 4px; border: 1px solid black">{element.getName()}</td>
+            </tr>
+        {/for}
+    </table>
+</details>
+
+</body>
+</html>
