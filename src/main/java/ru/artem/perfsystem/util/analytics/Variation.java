@@ -2,7 +2,7 @@ package ru.artem.perfsystem.util.analytics;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
-import ru.artem.perfsystem.entity.dto.*;
+import ru.artem.perfsystem.db.dto.*;
 import ru.artem.perfsystem.resource.page.wrapper.VariationAnalyticsWrapper;
 
 import java.math.RoundingMode;

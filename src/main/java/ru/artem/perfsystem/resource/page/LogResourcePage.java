@@ -5,7 +5,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import io.quarkus.qute.TemplateInstance;
 import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
 import ru.artem.perfsystem.resource.template.LogTemplate;
-import ru.artem.perfsystem.entity.dto.Report;
+import ru.artem.perfsystem.db.dto.Report;
 import ru.artem.perfsystem.util.FileUtil;
 import ru.artem.perfsystem.util.LogParser;
 

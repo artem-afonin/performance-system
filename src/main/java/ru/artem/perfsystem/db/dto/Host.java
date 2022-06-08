@@ -1,24 +1,23 @@
-package ru.artem.perfsystem.entity.dto;
+package ru.artem.perfsystem.db.dto;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.*;
 import java.util.Optional;
 
-
-@Entity(name = "benchmark")
-public class Benchmark extends PanacheEntityBase {
+@Entity(name = "host")
+public class Host extends PanacheEntityBase {
 
     @Id
-    @Column(name = "benchmark_id", nullable = false)
-    @SequenceGenerator(name = "benchmarkIdSequence", sequenceName = "benchmark_id_sequence", allocationSize = 1, initialValue = 1)
-    @GeneratedValue(generator = "benchmarkIdSequence")
+    @Column(name = "host_id", nullable = false)
+    @SequenceGenerator(name = "hostIdSequence", sequenceName = "host_id_sequence", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(generator = "hostIdSequence")
     private Integer id;
 
-    @Column(name = "benchmark_name", nullable = false)
+    @Column(name = "host_name", nullable = false)
     private String name;
 
-    public static Optional<Benchmark> findByName(String name) {
+    public static Optional<Host> findByName(String name) {
         return find("name", name).firstResultOptional();
     }
 
@@ -40,7 +39,7 @@ public class Benchmark extends PanacheEntityBase {
 
     @Override
     public String toString() {
-        return "Benchmark{" +
+        return "Host{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

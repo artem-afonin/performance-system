@@ -1,9 +1,10 @@
-package ru.artem.perfsystem.entity.dto;
+package ru.artem.perfsystem.db.dto;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity(name = "report")
 public class Report extends PanacheEntityBase {
@@ -35,6 +36,10 @@ public class Report extends PanacheEntityBase {
 
     @Column(name = "report_date", nullable = false)
     private Timestamp datetime;
+
+    public static List<Report> findByJdk(Jdk jdk) {
+        return find("jdk", jdk).list();
+    }
 
     public Integer getId() {
         return id;

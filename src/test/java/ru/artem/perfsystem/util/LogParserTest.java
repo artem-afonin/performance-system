@@ -2,9 +2,6 @@ package ru.artem.perfsystem.util;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
-import ru.artem.perfsystem.entity.dto.Report;
-
-import java.util.List;
 
 @QuarkusTest
 public class LogParserTest {

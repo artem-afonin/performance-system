@@ -1,4 +1,4 @@
-package ru.artem.perfsystem.entity.dto;
+package ru.artem.perfsystem.db.dto;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 

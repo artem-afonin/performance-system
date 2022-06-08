@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparison</title>
+</head>
+<body>
+{#if wrapper.isError()}
+    <h3>Error: {wrapper.getErrorMsg}</h3>
+    {#else}
+        {#each wrapper.result.baselineEntryList}
+            <details>
+            <summary>
+                Benchmark: <strong>{it.benchmark.name}</strong> | Host: <strong>{it.host.name}</strong>
+            </summary>
+            Baseline Geomean: <strong>{it.geomean}</strong>
+            |
+            Comparable Geomean: <strong>{wrapper.result.getComparableEntryList().get(it_index).getGeomean()}</strong>
+            |
+            Ratio: <strong>{wrapper.result.comparableEntryList.get(it_index).geomeanRatio}</strong>
+            <table>
+            <tr>
+                <th>Payload</th>
+                <th>Baseline Score</th>
+                <th>Comparable Score</th>
+            </tr>
+            {#let comparableReportList=wrapper.result.getComparableEntryList().get(it_index).getReportList()}
+                {#each it.reportList}
+                    <tr>
+                    <td>{it.payload.name}</td>
+                    <td>{it.value}</td>
+                    <td>{comparableReportList.get(it_index).value}</td>
+                    </tr>
+                {/each}
+            {/let}
+            </table>
+            </details>
+        {/each}
+{/if}
+</body>
+</html>

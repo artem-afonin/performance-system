@@ -1,9 +1,9 @@
 package ru.artem.perfsystem.resource.page.wrapper;
 
-import ru.artem.perfsystem.entity.dto.Benchmark;
-import ru.artem.perfsystem.entity.dto.Host;
-import ru.artem.perfsystem.entity.dto.Jdk;
-import ru.artem.perfsystem.entity.dto.Payload;
+import ru.artem.perfsystem.db.dto.Benchmark;
+import ru.artem.perfsystem.db.dto.Host;
+import ru.artem.perfsystem.db.dto.Jdk;
+import ru.artem.perfsystem.db.dto.Payload;
 
 public class VariationAnalyticsWrapper {
 

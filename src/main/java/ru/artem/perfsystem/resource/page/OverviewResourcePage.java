@@ -1,7 +1,7 @@
 package ru.artem.perfsystem.resource.page;
 
 import io.quarkus.qute.TemplateInstance;
-import ru.artem.perfsystem.entity.dto.*;
+import ru.artem.perfsystem.db.dto.*;
 import ru.artem.perfsystem.resource.page.wrapper.OverviewPanelWrapper;
 import ru.artem.perfsystem.resource.template.OverviewTemplate;
 

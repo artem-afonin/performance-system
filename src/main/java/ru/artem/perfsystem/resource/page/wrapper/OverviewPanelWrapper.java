@@ -1,6 +1,6 @@
 package ru.artem.perfsystem.resource.page.wrapper;
 
-import ru.artem.perfsystem.entity.dto.*;
+import ru.artem.perfsystem.db.dto.*;
 
 import java.util.List;
 

@@ -2,7 +2,7 @@ package ru.artem.perfsystem.util;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.exceptions.CsvException;
-import ru.artem.perfsystem.entity.dto.*;
+import ru.artem.perfsystem.db.dto.*;
 import ru.artem.perfsystem.exception.LogParsingException;
 import ru.artem.perfsystem.util.csv.LogCsvBean;
 
@@ -12,7 +12,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class LogParser {
 
