@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ru.artem.perfsystem.resource.grpc";
+option java_outer_classname = "AnalyticsResource";
+
+package grpc;
+
+service Analytics {
+  rpc getComparison (ComparisonRequest) returns (ComparisonResponse) {}
+}
+
+message ComparisonRequest {
+  string baselineName = 1;
+  uint32 baselineVersion = 2;
+  string comparableName = 3;
+  uint32 comparableVersion = 4;
+}
+
+message Benchmark {
+  string name = 1;
+}
+
+message Host {
+  string name = 1;
+}
+
+message Payload {
+  string name = 1;
+//  Benchmark benchmark = 2;
+}
+
+message Jdk {
+  string name = 1;
+  uint32 version = 2;
+}
+
+message Report {
+  Host host = 1;
+  Payload payload = 2;
+  //  MetricType metricType = 3;
+  Jdk jdk = 4;
+  double value = 5;
+}
+
+message BaselineEntry {
+  Benchmark benchmark = 1;
+  Host host = 2;
+  repeated Report reportList = 3;
+  double geomean = 4;
+}
+
+message ComparableEntry {
+  Benchmark benchmark = 1;
+  Host host = 2;
+  repeated Report reportList = 3;
+  double geomean = 4;
+  double geomeanRatio = 5;
+}
+
+message ComparisonResponse {
+//  Jdk baselineJdk = 1;
+  repeated BaselineEntry baselineEntryList = 2;
+//  Jdk comparableJdk = 3;
+  repeated ComparableEntry comparableEntryList = 4;
+}
